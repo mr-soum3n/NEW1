@@ -110,6 +110,13 @@ list-style:none;
 padding:0;
 }
 
+.top-banner{
+background:#ff3c00;
+text-align:center;
+padding:10px;
+font-weight:bold;
+}
+
 .cart li{
 margin:10px 0;
 }
