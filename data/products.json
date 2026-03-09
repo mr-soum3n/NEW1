@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Ride Hard Sticker",
+    "standard_price": 29,
+    "premium_price": 49
+  },
+  {
+    "id": 2,
+    "name": "Biker Mode Sticker",
+    "standard_price": 29,
+    "premium_price": 49
+  }
+]
