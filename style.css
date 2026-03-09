@@ -145,3 +145,9 @@ transition:0.3s;
 .category-card:hover{
 background:#ff3c00;
 }
+
+
+.product-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #ff3c00;
+}
