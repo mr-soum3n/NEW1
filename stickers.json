@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Ghost Ride R1",
+    "price": 69,
+    "image": "ghost-ride-r1.webp"
+  },
+  {
+    "name": "Happy Man",
+    "price": 69,
+    "image": "happy-man.webp"
+  },
+  {
+    "name": "Cafe Racer Midnight",
+    "price": 69,
+    "image": "cafe-racer-midnight.webp"
+  }
+]
