@@ -1,63 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FWC - FrostWolfCustom</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header class="header">
-<div class="logo">FWC</div>
-<nav>
-<a href="#">Home</a>
-<a href="#">Stickers</a>
-<a href="#">Packs</a>
-<a href="#">Garage</a>
-<a href="#">Anime</a>
-<a href="#">Meme</a>
-</nav>
-</header>
-
-<section class="hero">
-<div>
-<h1>RIDE HARD.<br>STICK HARD.</h1>
-<p>Premium Vinyl Stickers For Riders</p>
-</div>
-</section>
-
-<section class="section">
-<h2>Trending Stickers</h2>
-<div id="products" class="products"></div>
-</section>
-  <div class="product">
-  <img src="images/biker-meow.webp">
-  <h3>Turbo Meme</h3>
-  <p>₹11</p>
-  <button onclick="addToCart('Turbo Meme',11)">Add to Cart</button>
-</div>
-
-<script src="js/products.js"></script>
-<script src="js/cart.js"></script>
-
-  <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>FWC Stickers</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>FrostWolfCustom Stickers</h1>
+<header class="navbar">
+<div class="logo">FWC</div>
 
-<div id="sticker-grid"></div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Stickers</a>
+<a href="#">Categories</a>
+<a href="#">Cart</a>
+</nav>
+</header>
 
-<script src="script.js"></script>
 
-</body>
-</html>
+<section class="hero">
+
+<h1>FrostWolfCustom</h1>
+<p>Premium Stickers for Riders & Auto Enthusiasts</p>
+
+<a class="shop-btn" href="#products">Shop Stickers</a>
+
+</section>
+
+
+<section id="products" class="products">
+
+<div class="product-card">
+<img src="stickers/sticker1.png">
+<h3>Biker Attitude</h3>
+<p class="price">₹99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/sticker2.png">
+<h3>Duke Rider</h3>
+<p class="price">₹99</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/sticker3.png">
+<h3>Speed Demon</h3>
+<p class="price">₹99</p>
+<button>Add to Cart</button>
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 FrostWolfCustom</p>
+
+</footer>
+
 </body>
 </html>
