@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FWC Admin Panel</title>
+<style>
+body{
+font-family:Arial;
+background:#111;
+color:white;
+padding:40px;
+}
+input,button{
+padding:10px;
+margin:10px 0;
+width:100%;
+}
+button{
+background:#ff3c00;
+color:white;
+border:none;
+cursor:pointer;
+}
+textarea{
+width:100%;
+height:120px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>FWC Sticker Upload Helper</h2>
+
+<label>Sticker Name</label>
+<input id="name">
+
+<label>Price</label>
+<input id="price" value="99">
+
+<label>Image File Name (example: duke.png)</label>
+<input id="image">
+
+<button onclick="generate()">Generate JSON</button>
+
+<h3>Copy This</h3>
+
+<textarea id="output"></textarea>
+
+<script>
+function generate(){
+
+let name=document.getElementById("name").value
+let price=document.getElementById("price").value
+let image=document.getElementById("image").value
+
+let json=`{
+"name":"${name}",
+"price":${price},
+"image":"stickers/${image}"
+}`
+
+document.getElementById("output").value=json
+
+}
+</script>
+
+</body>
+</html>
