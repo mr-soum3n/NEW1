@@ -97,3 +97,19 @@ padding:30px;
 background:#111;
 color:#777;
 }
+
+.cart{
+background:#1a1a1a;
+padding:30px;
+margin:40px;
+border-radius:10px;
+}
+
+.cart ul{
+list-style:none;
+padding:0;
+}
+
+.cart li{
+margin:10px 0;
+}
