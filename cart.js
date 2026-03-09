@@ -43,6 +43,6 @@ let order = cart.map(i=>i.name + " ₹"+i.price).join("%0A")
 let total = document.getElementById("cart-total").textContent
 
 window.location.href =
-"mailto:youremail@gmail.com?subject=FWC Sticker Order&body=Order:%0A"+order+"%0A%0ATotal: ₹"+total
+"mailto:frostwolfcustom@gmail.com?subject=FWC Sticker Order&body=Order:%0A"+order+"%0A%0ATotal: ₹"+total
 
 }
