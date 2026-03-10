@@ -18,6 +18,8 @@ Add to Cart
 </button>
 `
 
+  "badge":"HOT"
+  
 container.appendChild(card)
 
 })
