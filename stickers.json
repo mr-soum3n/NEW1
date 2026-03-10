@@ -2,16 +2,16 @@
   {
     "name": "Ghost Ride R1",
     "price": 69,
-    "image":image/"ghost-ride-r1.webp"
+    "image":"stickers/ghost-ride-r1.webp"
   },
   {
     "name": "Happy Man",
     "price": 69,
-    "image": "happy-man.webp"
+    "image":"stickers/happy-man.webp"
   },
   {
     "name": "Cafe Racer Midnight",
     "price": 69,
-    "image": "cafe-racer-midnight.webp"
+    "image":"stickers/cafe-racer-midnight.webp"
   }
 ]
