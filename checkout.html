@@ -1,0 +1,29 @@
+<form action="https://formspree.io/f/xeelynew" method="POST">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="text" name="phone" placeholder="Phone Number" required>
+
+<input type="text" name="address" placeholder="Full Address" required>
+
+<textarea name="order" id="order-data"></textarea>
+
+<button type="submit">Place Order</button>
+
+</form>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let orderText = "";
+
+cart.forEach(item => {
+
+orderText += item.name + " x" + item.qty + " - ₹" + item.price + "\n";
+
+});
+
+document.getElementById("order-data").value = orderText;
+
+</script>
