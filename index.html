@@ -1,195 +1,119 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-index c7d9d619df750d6e33318873731b9d85868f16a8..51bc3664e961482abb9a1409aab46434b2c2545a 100644
---- a/index.html
-+++ b/index.html
-@@ -1,142 +1,48 @@
- <!DOCTYPE html>
--<html>
-+<html lang="en">
- <head>
--<meta charset="UTF-8">
--<title>FWC Stickers</title>
--<link rel="stylesheet" href="style.css">
-+  <meta charset="UTF-8">
-+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-+  <title>FWC Stickers</title>
-+  <link rel="stylesheet" href="style.css">
- </head>
--  
--<script src="products.js"></script>
--<script src="cart.js"></script>
--  
- <body>
--
--<header class="navbar">
--<div class="logo">FWC</div>
--
--<nav>
--<a href="#">Home</a>
--<a href="#">Stickers</a>
--<a href="#">Categories</a>
--<a href="#">Cart</a>
--
--  <div class="top-banner">
--🚚 Free Shipping on Orders Above ₹399
--</div>
--</nav>
--
--</header>
--
--
--<section class="hero">
--
--<h1>FrostWolfCustom</h1>
--<p>Premium Stickers for Riders & Auto Enthusiasts</p>
--
--<a class="shop-btn" href="#products">Shop Stickers</a>
--
--</section>
--<section class="categories">
--
--<h2>Categories</h2>
--
--<div class="category-grid">
--
--<div class="category-card">Bike Stickers</div>
--<div class="category-card">Meme Stickers</div>
--<div class="category-card">Car Stickers</div>
--<div class="category-card">Tech Stickers</div>
--
--</div>
--
--</section>
--
--<section id="products" class="products">
--
--<div class="product-card">
--<img src="stickers/ghost-ride-r1.webp">
--<h3>Ghost Ride R1</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--
--<div class="product-card">
--<img src="stickers/ghost-ride-decati-v4.webp">
--<h3>Ghost Ride Ducati V4</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--  
--<div class="product-card">
--<img src="stickers/low-battrey-phone.webp">
--<h3>low battrey</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--</section>
--
--<div class="product-card">
--<img src="stickers/Heart-semi-engine.webp">
--<h3>Heart Engine</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--
--<div class="product-card">
--<img src="stickers/unknow-rider-cbr.webp">
--<h3>Unknow Rider</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--  
--<div class="product-card">
--<img src="stickers/happy-man.webp">
--<h3>Happy Man</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--
--  <div class="product-card">
--<img src="stickers/last-upgrade-box-stack.webp">
--<h3>Last Upgrade</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--
--   <div class="product-card">
--<img src="stickers/biker-calender.webp">
--<h3>Calender</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--
--   <div class="product-card">
--<img src="stickers/biker-heart-v2-engline.webp">
--<h3>Engine Heart V2</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--
--
--   <div class="product-card">
--<img src="stickers/biker-meow.webp">
--<h3>Biker Meow V2</h3>
--<p class="price">₹69</p>
--<button>Add to Cart</button>
--</div>
--</section>
--
--</section>
--
--
--<section class="cart">
--
--<h2>Your Cart</h2>
--
--<ul id="cart-items"></ul>
--
--<p>Total: ₹<span id="cart-total">0</span></p>
--
--<button onclick="checkout()">Checkout</button>
--
--</section>
-+  <header class="navbar">
-+    <div class="logo">FWC</div>
-+    <nav>
-+      <a href="index.html">Home</a>
-+      <a href="#trending">Trending</a>
-+      <a href="trending.html">All Stickers</a>
-+    </nav>
-+  </header>
-+
-+  <div class="top-banner">🚚 Free Shipping on Orders Above ₹399</div>
-+
-+  <section class="hero">
-+    <h1>FrostWolfCustom</h1>
-+    <p>Premium stickers for riders & auto enthusiasts.</p>
-+    <a class="shop-btn" href="#trending">Shop Trending</a>
-+  </section>
-+
-+  <section id="trending" class="products-section">
-+    <h2>Trending Stickers</h2>
-+    <p class="section-subtitle">4 stickers per row, 2 rows preview.</p>
-+
-+    <div id="sticker-container" class="products"></div>
-+
-+    <div class="show-more-container">
-+      <a id="showMoreBtn" href="trending.html">See More</a>
-+    </div>
-+  </section>
-+
-+  <section class="cart">
-+    <h2>Your Cart</h2>
-+    <ul id="cart-items"></ul>
-+    <p>Total: ₹<span id="cart-total">0</span></p>
-+    <button onclick="checkout()">Checkout</button>
-+  </section>
-+
-+  <script src="cart.js"></script>
-+  <script src="products.js"></script>
-+</body>
-+</html>
- 
-EOF
-)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FWC Stickers</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="logo">FWC</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#trending">Trending</a>
+<a href="trending.html">All Stickers</a>
+</nav>
+</header>
+
+<div class="top-banner">
+🚚 Free Shipping on Orders Above ₹399
+</div>
+
+<section class="hero">
+<h1>FrostWolfCustom</h1>
+<p>Premium stickers for riders & auto enthusiasts</p>
+<a class="shop-btn" href="#trending">Shop Trending</a>
+</section>
+
+<section id="trending" class="products-section">
+
+<h2>Trending Stickers</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="stickers/ghost-ride-r1.webp">
+<h3>Ghost Ride R1</h3>
+<p class="price">₹69</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/ghost-ride-decati-v4.webp">
+<h3>Ghost Ride Ducati V4</h3>
+<p class="price">₹69</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/low-battrey-phone.webp">
+<h3>Low Battery</h3>
+<p class="price">₹69</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/Heart-semi-engine.webp">
+<h3>Heart Engine</h3>
+<p class="price">₹69</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/unknow-rider-cbr.webp">
+<h3>Unknown Rider</h3>
+<p class="price">₹69</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/happy-man.webp">
+<h3>Happy Man</h3>
+<p class="price">₹69</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/last-upgrade-box-stack.webp">
+<h3>Last Upgrade</h3>
+<p class="price">₹69</p>
+<button>Add to Cart</button>
+</div>
+
+<div class="product-card">
+<img src="stickers/biker-calender.webp">
+<h3>Calendar</h3>
+<p class="price">₹69</p>
+<button>Add to Cart</button>
+</div>
+
+</div>
+
+<div class="show-more-container">
+<a class="see-more-btn" href="trending.html">See More</a>
+</div>
+
+</section>
+
+<section class="cart">
+
+<h2>Your Cart</h2>
+
+<ul id="cart-items"></ul>
+
+<p>Total: ₹<span id="cart-total">0</span></p>
+
+<button onclick="checkout()">Checkout</button>
+
+</section>
+
+<script src="cart.js"></script>
+<script src="products.js"></script>
+
+</body>
+</html>
