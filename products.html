@@ -1,0 +1,37 @@
+<div id="product-container"></div>
+
+<script>
+
+const products = [
+
+{ name:"Racing Wolf", category:"racing", img:"img1.png" },
+
+{ name:"Bike Monster", category:"bike", img:"img2.png" },
+
+{ name:"Anime Rider", category:"anime", img:"img3.png" },
+
+{ name:"Helmet Skull", category:"helmet", img:"img4.png" }
+
+]
+
+const urlParams = new URLSearchParams(window.location.search)
+const selectedCategory = urlParams.get("cat")
+
+const container = document.getElementById("product-container")
+
+products.forEach(product => {
+
+if(product.category === selectedCategory){
+
+container.innerHTML += `
+<div class="product">
+<img src="${product.img}">
+<h3>${product.name}</h3>
+</div>
+`
+
+}
+
+})
+
+</script>
