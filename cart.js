@@ -1,48 +1,38 @@
-let cart = []
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(name, price){
+function addToCart(name, price, image){
 
-cart.push({name,price})
+let existing = cart.find(item => item.name === name);
 
-renderCart()
+if(existing){
+existing.qty += 1;
+}else{
+cart.push({
+name:name,
+price:price,
+image:image,
+qty:1
+});
+}
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+updateCartCount();
+
+alert("Item added to cart");
 
 }
 
+function updateCartCount(){
 
-function renderCart(){
+let count = cart.reduce((total,item)=> total + item.qty,0);
 
-const list = document.getElementById("cart-items")
+let el = document.getElementById("cart-count");
 
-const totalEl = document.getElementById("cart-total")
-
-list.innerHTML = ""
-
-let total = 0
-
-cart.forEach(item =>{
-
-const li = document.createElement("li")
-
-li.textContent = item.name + " - ₹" + item.price
-
-list.appendChild(li)
-
-total += item.price
-
-})
-
-totalEl.textContent = total
+if(el){
+el.innerText = count;
+}
 
 }
 
-
-function checkout(){
-
-let order = cart.map(i=>i.name + " ₹"+i.price).join("%0A")
-
-let total = document.getElementById("cart-total").textContent
-
-window.location.href =
-"mailto:frostwolfcustom@gmail.com?subject=FWC Sticker Order&body=Order:%0A"+order+"%0A%0ATotal: ₹"+total
-
-}
+updateCartCount();
