@@ -199,4 +199,34 @@ border-radius:6px;
 cursor:pointer;
 }
 
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:20px;
+}
+
+.product-card{
+background:#1a1a1a;
+padding:10px;
+border-radius:8px;
+text-align:center;
+}
+
+.product-card img{
+width:100%;
+}
+
+.show-more-container{
+text-align:center;
+margin:30px;
+}
+
+.see-more-btn{
+background:#ff3c3c;
+color:white;
+padding:10px 20px;
+text-decoration:none;
+border-radius:6px;
+}
 
