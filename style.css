@@ -239,3 +239,20 @@ text-decoration:none;
 border-radius:8px;
 font-weight:bold;
 }
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:40px;
+}
+
+.category-grid a{
+background:#1c1c1c;
+padding:20px;
+text-align:center;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+}
