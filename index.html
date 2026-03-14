@@ -1,222 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>FrostWolfCustom Stickers</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0f0f0f;
-color:white;
-}
-
-/* NAVBAR */
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:#000;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-}
-
-.cart{
-font-size:18px;
-}
-
-/* GRID */
-
-.products{
-
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-padding:40px;
-
-}
-
-.product{
-
-background:#1c1c1c;
-padding:15px;
-border-radius:10px;
-text-align:center;
-
-}
-
-.product img{
-width:100%;
-border-radius:8px;
-}
-
-.product h3{
-margin:10px 0;
-}
-
-.price{
-color:#00ff88;
-font-weight:bold;
-}
-
-button{
-
-background:#ff3c00;
-border:none;
-padding:10px 15px;
-border-radius:6px;
-color:white;
-cursor:pointer;
-
-}
-
-button:hover{
-background:#ff5c2e;
-}
-
-/* FOOTER CART */
-
-.cart-bar{
-
-position:fixed;
-bottom:0;
-width:100%;
-background:#000;
-display:flex;
-justify-content:space-between;
-padding:15px 40px;
-
-}
-
-</style>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FWC Stickers</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
+  <script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price, image){
+
+let product = {
+name:name,
+price:price,
+image:image,
+qty:1
+};
+
+cart.push(product);
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+alert("Added to Cart");
+
+updateCartCount();
+
+}
+
+function updateCartCount(){
+
+document.getElementById("cart-count").innerText = cart.length;
+
+}
+
+updateCartCount();
+
+</script>
 <body>
 
-<!-- NAVBAR -->
+<header class="navbar">
+<div class="logo">FWC</div>
 
-<div class="navbar">
+<nav>
+  <a href="cart.html" class="cart-icon">
+🛒 Cart ( <span id="cart-count">0</span> )
 
-<div class="logo">
-FrostWolfCustom
+</a>
+<a href="index.html">Home</a>
+<a href="#trending">Trending</a>
+<a href="categories.html" class="category-btn">Browse Categories</a>
+</nav>
+</header>
+
+<div class="top-banner">
+🚚 Free Shipping on Orders Above ₹399
 </div>
 
-<div class="cart">
-🛒 Cart (<span id="cart-count">0</span>)
-</div>
+<section class="hero">
+<h1>FrostWolfCustom</h1>
+<p>Premium stickers for riders & auto enthusiasts</p>
+<a class="shop-btn" href="#trending">Shop Trending</a>
+</section>
 
-</div>
+<section id="trending" class="products-section">
 
-
-<!-- PRODUCTS -->
+<h2>Trending Stickers</h2>
 
 <div class="products">
 
-
-<div class="product">
-
-<img src="images/sticker1.png">
-
+<div class="product-card">
+<img src="stickers/ghost-ride-r1.webp">
 <h3>Ghost Ride R1</h3>
-
-<div class="price">₹69</div>
-
+<p class="price">₹69</p>
 <button onclick="addToCart('Ghost Ride R1',69)">
 Add to Cart
 </button>
-
 </div>
 
-
-<div class="product">
-
-<img src="images/sticker2.png">
-
-<h3>Ghost Ride Ducati</h3>
-
-<div class="price">₹69</div>
-
-<button onclick="addToCart('Ghost Ride Ducati',69)">
+<div class="product-card">
+<img src="stickers/ghost-ride-decati-v4.webp">
+<h3>Ghost Ride Ducati V4</h3>
+<p class="price">₹69</p>
+<button onclick="addToCart('Ghost Ride Ducati V4',69)">
 Add to Cart
 </button>
-
 </div>
 
-
-<div class="product">
-
-<img src="images/sticker3.png">
-
+<div class="product-card">
+<img src="stickers/low-battrey-phone.webp">
 <h3>Low Battery</h3>
-
-<div class="price">₹69</div>
-
+<p class="price">₹69</p>
 <button onclick="addToCart('Low Battery',69)">
 Add to Cart
 </button>
 
 </div>
 
-
-<div class="product">
-
-<img src="images/sticker4.png">
-
-<h3>Wolf Racing</h3>
-
-<div class="price">₹69</div>
-
-<button onclick="addToCart('Wolf Racing',69)">
+<div class="product-card">
+<img src="stickers/Heart-semi-engine.webp">
+<h3>Heart Engine</h3>
+<p class="price">₹69</p>
+<button onclick="addToCart('Heart Engine',69)">
 Add to Cart
 </button>
 
 </div>
 
+<div class="product-card">
+<img src="stickers/unknow-rider-cbr.webp">
+<h3>Unknown Rider</h3>
+<p class="price">₹69</p>
+<button onclick="addToCart('Unknown Rider',69)">
+Add to Cart
+</button>
 
 </div>
 
-
-
-<!-- CART BAR -->
-
-<div class="cart-bar">
-
-<div>
-
-Items: <span id="cart-count-bottom">0</span>
+<div class="product-card">
+<img src="stickers/happy-man.webp">
+<h3>Happy Man</h3>
+<p class="price">₹69</p>
+<button onclick="addToCart('Happy Man',69)">
+Add to Cart
+</button>
 
 </div>
 
-<div>
+<div class="product-card">
+<img src="stickers/last-upgrade-box-stack.webp">
+<h3>Last Upgrade</h3>
+<p class="price">₹69</p>
+<button onclick="addToCart('Last Upgrade',69)">
+Add to Cart
+</button>
 
-Total: ₹<span id="cart-total">0</span>
+</div>
+
+<div class="product-card">
+<img src="stickers/biker-calender.webp">
+<h3>Calendar</h3>
+<p class="price">₹69</p>
+<button onclick="addToCart('Calendar',69)">
+Add to Cart
+</button>
 
 </div>
 
 </div>
 
+<div class="show-more-container">
+<a class="see-more-btn" href="trending.html">See More</a>
+</div>
 
+</section>
 
-<script>
+<section class="cart">
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+<h2>Your Cart</h2>
+
+<ul id="cart-items"></ul>
+
+<p>Total: ₹<span id="cart-total">0</span></p>
+
+<button onclick="checkout()">Checkout</button>
+
+</section>
+
+<script src="cart.js"></script>
+<script src="products.js"></script>
+
+  <script>
+
+let cart = [];
 
 function addToCart(name,price){
 
 cart.push({name,price});
-
-localStorage.setItem("cart",JSON.stringify(cart));
 
 updateCart();
 
@@ -230,15 +193,10 @@ cart.forEach(item=>{
 total += item.price;
 });
 
-document.getElementById("cart-total").innerText = total;
-
+document.getElementById("cart-total").innerText = "₹"+total;
 document.getElementById("cart-count").innerText = cart.length;
 
-document.getElementById("cart-count-bottom").innerText = cart.length;
-
 }
-
-updateCart();
 
 </script>
 
